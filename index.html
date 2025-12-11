@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>CRYPTO NOVΛ — All you need in crypto — in one app</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="CRYPTO NOVΛ — premium crypto ecosystem that combines analytics, trading signals, education, portfolio management and automated trading in one app."
+    content="CRYPTO NOVΛ — analytics, trading signals, education, portfolio tools and optional API autotrading in a single premium app."
   />
 
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
 
@@ -26,8 +26,8 @@
       --accent-silver: #cfd3dd;
       --text-primary: #ffffff;
       --text-secondary: #a6a8b3;
-      --border-soft: rgba(255, 255, 255, 0.1);
-      --card-bg: rgba(12, 12, 20, 0.75);
+      --border-soft: rgba(255, 255, 255, 0.11);
+      --card-bg: rgba(12, 12, 20, 0.9);
       --radius-lg: 24px;
       --max-width: 1120px;
       --transition-fast: 0.2s ease-out;
@@ -48,7 +48,7 @@
     body {
       font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont,
         "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #171a2b 0, #050509 45%);
+      background: radial-gradient(circle at top, #15182a 0, #050509 48%);
       color: var(--text-primary);
       -webkit-font-smoothing: antialiased;
     }
@@ -63,7 +63,7 @@
       width: 100%;
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 0 16px;
+      padding: 0 18px;
     }
 
     section {
@@ -74,7 +74,7 @@
 
     @media (max-width: 768px) {
       section {
-        padding: 56px 0;
+        padding: 60px 0;
       }
     }
 
@@ -115,13 +115,15 @@
       gap: 8px;
       padding: 6px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.12), transparent);
-      font-size: 12px;
+      font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       color: var(--text-secondary);
     }
+
+    /* HEADER */
 
     header {
       position: sticky;
@@ -131,7 +133,7 @@
       -webkit-backdrop-filter: blur(14px);
       background: linear-gradient(
         to bottom,
-        rgba(5, 5, 10, 0.92),
+        rgba(5, 5, 10, 0.95),
         rgba(5, 5, 10, 0.7),
         transparent
       );
@@ -176,6 +178,7 @@
       text-decoration: none;
       transition: color var(--transition-fast), opacity var(--transition-fast);
       opacity: 0.9;
+      white-space: nowrap;
     }
 
     nav a:hover {
@@ -193,10 +196,10 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 10px 18px;
+      padding: 11px 20px;
       border-radius: 999px;
       border: 1px solid transparent;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 500;
       cursor: pointer;
       text-decoration: none;
@@ -218,9 +221,9 @@
     }
 
     .btn-ghost {
-      border-color: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.2);
       color: var(--text-secondary);
-      background: rgba(10, 10, 16, 0.7);
+      background: rgba(10, 10, 16, 0.8);
     }
 
     .btn-ghost:hover {
@@ -265,6 +268,30 @@
       top: 5px;
     }
 
+    .lang-switch {
+      display: inline-flex;
+      padding: 3px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(6, 7, 14, 0.9);
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      cursor: pointer;
+      letter-spacing: 0.08em;
+    }
+
+    .lang-btn.active {
+      background: linear-gradient(135deg, #2f7bff, #7f5dff);
+      color: #ffffff;
+    }
+
     @media (max-width: 900px) {
       nav ul {
         display: none;
@@ -272,7 +299,15 @@
       .nav-toggle {
         display: inline-flex;
       }
+      .nav-right {
+        gap: 8px;
+      }
+      .btn-primary {
+        padding-inline: 14px;
+      }
     }
+
+    /* HERO */
 
     .hero {
       padding-top: 64px;
@@ -281,21 +316,21 @@
 
     .hero-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
       gap: 42px;
       align-items: center;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 960px) {
       .hero-layout {
         grid-template-columns: minmax(0, 1fr);
       }
     }
 
     .hero-title {
-      font-size: clamp(32px, 4vw, 44px);
-      line-height: 1.05;
-      margin: 16px 0;
+      font-size: clamp(34px, 4.2vw, 46px);
+      line-height: 1.06;
+      margin: 18px 0 14px;
     }
 
     .hero-title span {
@@ -307,141 +342,121 @@
 
     .hero-subtitle {
       color: var(--text-secondary);
-      font-size: 15px;
-      max-width: 460px;
-      margin-bottom: 24px;
+      font-size: 16px;
+      max-width: 520px;
+      margin-bottom: 22px;
     }
 
     .hero-ctas {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .hero-note {
-      font-size: 12px;
+      font-size: 13px;
       color: var(--text-secondary);
     }
 
-    .hero-phone {
+    .hero-note strong {
+      color: var(--accent-silver);
+    }
+
+    .hero-right {
       display: flex;
       justify-content: center;
     }
 
-    .phone-mock {
+    .phones-scroll-shell {
+      width: 100%;
+      max-width: 340px;
+    }
+
+    .phone-frame {
       position: relative;
-      width: 260px;
+      width: 100%;
       aspect-ratio: 9 / 19;
-      border-radius: 38px;
+      border-radius: 36px;
       padding: 10px;
       background: radial-gradient(circle at top, #3d4d7b, #050509);
       box-shadow:
         0 24px 80px rgba(0, 0, 0, 0.9),
         0 0 0 2px rgba(255, 255, 255, 0.06);
+      overflow: hidden;
       display: flex;
       align-items: stretch;
       justify-content: center;
-      overflow: hidden;
     }
 
-    .phone-inner {
-      border-radius: 30px;
+    .phone-inner-scroll {
+      border-radius: 28px;
       background: linear-gradient(160deg, #050509, #151623);
       border: 1px solid rgba(255, 255, 255, 0.08);
       width: 100%;
-      padding: 16px 12px;
+      padding: 12px 8px 14px;
       display: flex;
       flex-direction: column;
       gap: 8px;
-      position: relative;
+      overflow: hidden;
     }
 
-    .phone-status {
+    .phone-status-row {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
+      gap: 8px;
       font-size: 11px;
       color: var(--text-secondary);
       margin-bottom: 4px;
     }
 
-    .phone-dot {
-      width: 42px;
+    .phone-notch {
+      width: 44px;
       height: 16px;
       border-radius: 999px;
       background: radial-gradient(circle at top, #141414, #050509);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      margin: 0 auto;
     }
 
-    .phone-main-card {
-      margin-top: 6px;
-      padding: 14px;
+    .screens-track {
+      margin-top: 8px;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 6px;
+    }
+
+    .screens-track::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .screens-track::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+    }
+
+    .screen-item {
+      flex: 0 0 82%;
       border-radius: 20px;
-      background: radial-gradient(circle at top left, rgba(47, 123, 255, 0.3), transparent),
-        rgba(8, 10, 24, 0.96);
+      overflow: hidden;
+      scroll-snap-align: center;
+      background: #000;
       border: 1px solid rgba(255, 255, 255, 0.12);
     }
 
-    .phone-main-title {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--accent-silver);
-      margin-bottom: 4px;
+    .screen-item img {
+      width: 100%;
+      display: block;
+      height: auto;
     }
 
-    .phone-main-value {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .phone-main-caption {
+    .scroll-hint {
       font-size: 11px;
-      color: var(--text-secondary);
-    }
-
-    .phone-tags {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 6px;
-      margin-top: 10px;
-    }
-
-    .phone-tag {
-      padding: 6px 7px;
-      border-radius: 999px;
-      font-size: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      color: var(--text-secondary);
       text-align: center;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .phone-list {
-      margin-top: 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .phone-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 11px;
-      padding: 6px 8px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    .phone-row span:last-child {
-      color: var(--accent-blue);
-      font-weight: 500;
+      margin-top: 6px;
+      color: var(--text-secondary);
     }
 
     .section-label {
@@ -449,25 +464,35 @@
     }
 
     .section-title {
-      font-size: 26px;
+      font-size: 28px;
       margin-bottom: 10px;
     }
 
     .section-description {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--text-secondary);
-      max-width: 560px;
+      max-width: 640px;
       margin-bottom: 26px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 24px;
+      }
+      .section-description {
+        font-size: 14px;
+      }
     }
 
     .about-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
       gap: 32px;
       align-items: flex-start;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 960px) {
       .about-layout {
         grid-template-columns: minmax(0, 1fr);
       }
@@ -477,8 +502,8 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      font-size: 14px;
+      gap: 10px;
+      font-size: 15px;
       color: var(--text-secondary);
     }
 
@@ -489,7 +514,7 @@
     }
 
     .about-aside {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-secondary);
     }
 
@@ -500,7 +525,7 @@
     .features-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+      gap: 20px;
     }
 
     @media (max-width: 1024px) {
@@ -516,7 +541,7 @@
     }
 
     .feature-card {
-      padding: 16px 16px 18px;
+      padding: 18px 18px 20px;
       position: relative;
       overflow: hidden;
       cursor: default;
@@ -539,8 +564,8 @@
       border-color: rgba(255, 255, 255, 0.22);
       box-shadow:
         0 18px 60px rgba(0, 0, 0, 0.85),
-        0 0 0 1px rgba(255, 255, 255, 0.04);
-      background: rgba(14, 16, 30, 0.9);
+        0 0 0 1px rgba(255, 255, 255, 0.06);
+      background: rgba(14, 16, 30, 0.95);
     }
 
     .feature-card:hover::before {
@@ -557,18 +582,19 @@
     }
 
     .feature-title {
-      font-size: 16px;
+      font-size: 17px;
       margin-bottom: 6px;
     }
 
     .feature-desc {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-secondary);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+      line-height: 1.6;
     }
 
     .feature-tagline {
-      font-size: 11px;
+      font-size: 12px;
       color: var(--accent-silver);
       opacity: 0.9;
     }
@@ -587,10 +613,10 @@
     }
 
     .tier-card {
-      padding: 18px 18px 20px;
+      padding: 20px 20px 22px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
       position: relative;
       overflow: hidden;
     }
@@ -626,15 +652,17 @@
       border-radius: 999px;
       border: 1px solid rgba(255, 255, 255, 0.18);
       color: var(--text-secondary);
+      white-space: nowrap;
     }
 
     .tier-list {
       list-style: none;
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-secondary);
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
+      line-height: 1.5;
     }
 
     .tier-list li::before {
@@ -645,14 +673,14 @@
     }
 
     .tier-cta {
-      margin-top: 12px;
+      margin-top: 8px;
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
     }
 
     .tier-hint {
-      font-size: 11px;
+      font-size: 12px;
       color: var(--text-secondary);
       margin-top: 6px;
     }
@@ -667,7 +695,7 @@
 
     .list-columns {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
       gap: 24px;
       align-items: flex-start;
     }
@@ -694,7 +722,7 @@
     }
 
     .badge-block {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-secondary);
     }
 
@@ -715,9 +743,10 @@
     }
 
     .social-card {
-      padding: 14px 16px 18px;
-      font-size: 13px;
+      padding: 16px 18px 20px;
+      font-size: 14px;
       color: var(--text-secondary);
+      line-height: 1.6;
     }
 
     .social-tag {
@@ -731,6 +760,7 @@
     .social-main {
       color: var(--text-primary);
       margin-bottom: 6px;
+      font-size: 15px;
     }
 
     .download-block {
@@ -740,12 +770,12 @@
     }
 
     .download-title {
-      font-size: 22px;
+      font-size: 24px;
       margin-bottom: 8px;
     }
 
     .download-subtitle {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--text-secondary);
       margin-bottom: 18px;
     }
@@ -755,11 +785,92 @@
       justify-content: center;
       gap: 12px;
       flex-wrap: wrap;
+      margin-bottom: 8px;
     }
+
+    .download-note {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    /* LEGAL */
+
+    .legal-section {
+      padding-top: 40px;
+    }
+
+    .legal-accordion {
+      margin-bottom: 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(10, 10, 18, 0.92);
+      padding: 0 18px;
+    }
+
+    .legal-accordion summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 14px 4px;
+      font-size: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-primary);
+    }
+
+    .legal-accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .legal-accordion summary span.chevron {
+      font-size: 16px;
+      transform: rotate(0deg);
+      transition: transform 0.2s ease-out;
+      color: var(--text-secondary);
+    }
+
+    .legal-accordion[open] summary span.chevron {
+      transform: rotate(90deg);
+    }
+
+    .legal-body {
+      padding: 0 0 16px 0;
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .legal-body-inner {
+      padding-top: 12px;
+      display: none;
+    }
+
+    .legal-body-inner.active {
+      display: block;
+    }
+
+    .legal-body h3 {
+      font-size: 14px;
+      margin-top: 10px;
+      margin-bottom: 4px;
+      color: var(--text-primary);
+    }
+
+    .legal-body ul {
+      padding-left: 16px;
+      margin-bottom: 4px;
+    }
+
+    .legal-body li {
+      margin-bottom: 3px;
+    }
+
+    /* FOOTER */
 
     footer {
       border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 20px 0 24px;
+      padding: 22px 0 26px;
       margin-top: 40px;
       background: radial-gradient(circle at bottom, #141421, #050509 60%);
     }
@@ -788,6 +899,18 @@
     .footer-links a:hover {
       color: var(--text-primary);
     }
+
+    @media (max-width: 640px) {
+      .hero-subtitle {
+        font-size: 15px;
+      }
+      .hero-note {
+        font-size: 12px;
+      }
+      .btn {
+        font-size: 13px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -805,21 +928,22 @@
 
           <nav aria-label="Primary navigation">
             <ul>
-              <li><a href="#hero">Overview</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#features">App sections</a></li>
-              <li><a href="#tiers">Plans</a></li>
-              <li><a href="#download">Download</a></li>
-              <li><a href="#privacy">Privacy</a></li>
-              <li><a href="#terms">Terms</a></li>
+              <li><a href="#hero" data-i18n="nav_overview">Overview</a></li>
+              <li><a href="#about" data-i18n="nav_about">Why CRYPTO NOVΛ</a></li>
+              <li><a href="#features" data-i18n="nav_features">App sections</a></li>
+              <li><a href="#tiers" data-i18n="nav_plans">Plans</a></li>
+              <li><a href="#download" data-i18n="nav_download">Download</a></li>
+              <li><a href="#legal" data-i18n="nav_legal">Legal</a></li>
             </ul>
           </nav>
 
           <div class="nav-right">
-            <button class="nav-toggle" aria-label="Open navigation">
-              <span></span>
-            </button>
-            <a href="#download" class="btn btn-primary">Get the app</a>
+            <div class="lang-switch" id="langSwitch">
+              <button class="lang-btn active" data-lang="en">EN</button>
+              <button class="lang-btn" data-lang="ru">RU</button>
+              <button class="lang-btn" data-lang="ua">UA</button>
+            </div>
+            <a href="#download" class="btn btn-primary" data-i18n="nav_cta">Get the app</a>
           </div>
         </div>
       </div>
@@ -831,64 +955,60 @@
         <div class="container">
           <div class="hero-layout">
             <div>
-              <div class="pill">Premium crypto ecosystem</div>
+              <div class="pill" data-i18n="hero_pill">Premium crypto ecosystem</div>
               <h1 class="hero-title">
-                All you need in crypto —
-                <span>in one app</span>.
+                <span data-i18n="hero_title_1">All you need in crypto</span><br />
+                <span data-i18n="hero_title_2">— in one app.</span>
               </h1>
-              <p class="hero-subtitle">
-                CRYPTO NOVΛ unites analytics, trading signals, PRO-level education,
-                portfolio tracking, passive income and automation into a single, premium
-                mobile platform.
+              <p class="hero-subtitle" data-i18n="hero_subtitle">
+                CRYPTO NOVΛ unites deep daily market analytics, structured trading
+                signals, a 70+ lesson course, portfolio tools and optional API
+                autotrading in a single app.
               </p>
 
               <div class="hero-ctas">
-                <a href="#download" class="btn btn-primary">Download for iOS</a>
-                <a href="#download" class="btn btn-ghost">Download for Android</a>
+                <a href="#download" class="btn btn-primary" data-i18n="hero_btn_ios">
+                  Download for iOS
+                </a>
+                <a href="#download" class="btn btn-ghost" data-i18n="hero_btn_android">
+                  Download for Android
+                </a>
               </div>
 
-              <p class="hero-note">
-                From the first lesson to automated trading — CRYPTO NOVΛ stays with you
-                on every level: FREE, PRO and VIP.
+              <p class="hero-note" data-i18n="hero_note">
+                From basic education to PRO and VIP tools — one ecosystem instead of
+                many separate services.
               </p>
             </div>
 
-            <div class="hero-phone">
-              <div class="phone-mock">
-                <div class="phone-inner">
-                  <div class="phone-status">
-                    <span>CRYPTO NOVΛ</span>
-                    <span>•••</span>
-                  </div>
-                  <div class="phone-dot"></div>
+            <div class="hero-right">
+              <div class="phones-scroll-shell">
+                <div class="phone-frame">
+                  <div class="phone-inner-scroll">
+                    <div class="phone-status-row">
+                      <span>CRYPTO NOVΛ</span>
+                      <div class="phone-notch"></div>
+                      <span>•••</span>
+                    </div>
 
-                  <div class="phone-main-card">
-                    <div class="phone-main-title">Market overview</div>
-                    <div class="phone-main-value">BTC +3.8% • ETH +2.1%</div>
-                    <div class="phone-main-caption">
-                      Real-time analytics, dominance, trends and sentiment —
-                      updated continuously.
+                    <div class="screens-track">
+                      <!-- ЗАГЛУШКИ ЭКРАНОВ: замени src на свои файлы -->
+                      <div class="screen-item">
+                        <img src="screen-home.png" alt="CRYPTO NOVΛ — Home screen" />
+                      </div>
+                      <div class="screen-item">
+                        <img src="screen-signals.png" alt="CRYPTO NOVΛ — Signals screen" />
+                      </div>
+                      <div class="screen-item">
+                        <img src="screen-portfolio.png" alt="CRYPTO NOVΛ — Portfolio screen" />
+                      </div>
+                      <div class="screen-item">
+                        <img src="screen-market.png" alt="CRYPTO NOVΛ — Market analytics screen" />
+                      </div>
                     </div>
-                    <div class="phone-tags">
-                      <div class="phone-tag">Signals: Spot &amp; Futures</div>
-                      <div class="phone-tag">Education: 70+ lessons</div>
-                      <div class="phone-tag">Portfolio analytics</div>
-                      <div class="phone-tag">Passive income tools</div>
-                    </div>
-                  </div>
 
-                  <div class="phone-list">
-                    <div class="phone-row">
-                      <span>Signal — ETH/USDT</span>
-                      <span>+18.4%</span>
-                    </div>
-                    <div class="phone-row">
-                      <span>Lesson — Futures risk</span>
-                      <span>PRO</span>
-                    </div>
-                    <div class="phone-row">
-                      <span>VIP automation</span>
-                      <span>Active</span>
+                    <div class="scroll-hint" data-i18n="hero_scroll_hint">
+                      Swipe horizontally to view real app screens.
                     </div>
                   </div>
                 </div>
@@ -903,29 +1023,47 @@
         <div class="container">
           <div class="glass about-layout">
             <div class="about-text" style="padding: 24px 22px;">
-              <div class="section-label pill">About CRYPTO NOVΛ</div>
-              <h2 class="section-title">One ecosystem instead of ten different tools</h2>
-              <p class="section-description">
-                Most traders are forced to jump between exchanges, signal channels,
-                YouTube lessons and spreadsheets. CRYPTO NOVΛ compresses this chaos into
-                one clear, structured, premium app.
+              <div class="section-label pill" data-i18n="about_pill">About CRYPTO NOVΛ</div>
+              <h2 class="section-title" data-i18n="about_title">
+                One ecosystem instead of many separate tools
+              </h2>
+              <p class="section-description" data-i18n="about_desc">
+                Traders and investors usually jump between exchanges, signal channels,
+                PDF-courses and spreadsheets. CRYPTO NOVΛ combines all key components
+                into one structured, premium-level application.
               </p>
 
               <ul>
-                <li>Full market analytics and personalised dashboards.</li>
-                <li>Carefully curated spot &amp; futures trading signals.</li>
-                <li>Structured crypto course with 70+ lessons and PRO modules.</li>
-                <li>Portfolio tracking, statistics and risk control.</li>
-                <li>Passive income, funds, DeFi and VIP-level automation.</li>
+                <li data-i18n="about_li_1">
+                  Deep daily market analytics and dashboards.
+                </li>
+                <li data-i18n="about_li_2">
+                  Ready-made spot and futures setups with clear levels and risk.
+                </li>
+                <li data-i18n="about_li_3">
+                  Optional API autotrading via bot based on signals.
+                </li>
+                <li data-i18n="about_li_4">
+                  Structured 70+ lesson course from basics to advanced strategies.
+                </li>
+                <li data-i18n="about_li_5">
+                  Portfolio analytics, statistics and risk tracking.
+                </li>
+                <li data-i18n="about_li_6">
+                  Support team ready to help 24/7 via Telegram.
+                </li>
               </ul>
             </div>
 
             <div class="about-aside glass" style="padding: 20px;">
-              <strong>Designed for real users and investors.</strong>
-              <br /><br />
-              CRYPTO NOVΛ is built as a professional ecosystem: from the first deposit
-              and basic education to advanced strategies, automated trading and portfolio
-              support. The same app serves beginners, PRO-traders and VIP-investors.
+              <p data-i18n="about_aside_1">
+                <strong>Designed for real usage and real decisions.</strong>
+                <br /><br />
+                CRYPTO NOVΛ is not an exchange and not a financial advisor. It is a
+                professional environment where analytics, education and signals are
+                aligned in one place, helping you make informed choices in the crypto
+                market.
+              </p>
             </div>
           </div>
         </div>
@@ -934,72 +1072,99 @@
       <!-- FEATURES -->
       <section id="features">
         <div class="container">
-          <div class="section-label pill">App sections</div>
-          <h2 class="section-title">What is inside CRYPTO NOVΛ</h2>
-          <p class="section-description">
-            Every section of the app is focused on one task: to help a user earn,
-            protect capital and make informed decisions — without drowning in noise.
+          <div class="section-label pill" data-i18n="features_pill">App sections</div>
+          <h2 class="section-title" data-i18n="features_title">
+            What is inside CRYPTO NOVΛ
+          </h2>
+          <p class="section-description" data-i18n="features_desc">
+            Every section of the app has one clear task: to give you structured
+            information, not promises. Analytics, setups, lessons and tools work
+            together inside one ecosystem.
           </p>
 
           <div class="features-grid">
             <div class="feature-card glass">
-              <div class="feature-label">Home</div>
-              <div class="feature-title">Market overview &amp; dominance</div>
-              <p class="feature-desc">
-                Key metrics, trends, Bitcoin dominance, market heatmap and sentiment —
-                in one clear screen.
+              <div class="feature-label" data-i18n="f1_label">Home</div>
+              <div class="feature-title" data-i18n="f1_title">
+                Deep daily market analytics
+              </div>
+              <p class="feature-desc" data-i18n="f1_desc">
+                Capitalisation, volumes, dominance, key tokens and sentiment indicators
+                — updated and visualised in one screen.
               </p>
-              <div class="feature-tagline">You see the whole market before opening any trade.</div>
+              <div class="feature-tagline" data-i18n="f1_tag">
+                See the market context before looking at any single coin.
+              </div>
             </div>
 
             <div class="feature-card glass">
-              <div class="feature-label">Signals</div>
-              <div class="feature-title">Spot &amp; futures trading signals</div>
-              <p class="feature-desc">
-                Precise entries, SL and TPs, risk commentary and position sizing
-                concepts — not just “Buy / Sell”.
+              <div class="feature-label" data-i18n="f2_label">Signals</div>
+              <div class="feature-title" data-i18n="f2_title">
+                Ready-made spot &amp; futures setups
+              </div>
+              <p class="feature-desc" data-i18n="f2_desc">
+                Structured ideas with entry zones, stop levels and targets. Signals are
+                informational and can be used manually or via optional API autotrading.
               </p>
-              <div class="feature-tagline">FREE users see part of signals, PRO/VIP — full access.</div>
+              <div class="feature-tagline" data-i18n="f2_tag">
+                No guarantees or promises — only transparent setups and levels.
+              </div>
             </div>
 
             <div class="feature-card glass">
-              <div class="feature-label">Education</div>
-              <div class="feature-title">70+ lessons, PRO modules &amp; practice</div>
-              <p class="feature-desc">
-                Clear, structured crypto education from basics and security to futures,
-                DeFi and advanced strategies.
+              <div class="feature-label" data-i18n="f3_label">Education</div>
+              <div class="feature-title" data-i18n="f3_title">
+                70+ lessons inside the app
+              </div>
+              <p class="feature-desc" data-i18n="f3_desc">
+                From fundamentals and security to futures, risk management, DeFi and
+                advanced strategies — structured in modules with practice tasks.
               </p>
-              <div class="feature-tagline">Learn inside the app, step by step, with practice tasks.</div>
+              <div class="feature-tagline" data-i18n="f3_tag">
+                Learn and apply directly in the same environment.
+              </div>
             </div>
 
             <div class="feature-card glass">
-              <div class="feature-label">Portfolio</div>
-              <div class="feature-title">Positions, P&amp;L and risk</div>
-              <p class="feature-desc">
-                Track assets, average entries, floating profit, risk per trade and
-                portfolio exposure.
+              <div class="feature-label" data-i18n="f4_label">Portfolio</div>
+              <div class="feature-title" data-i18n="f4_title">
+                Portfolio and risk overview
+              </div>
+              <p class="feature-desc" data-i18n="f4_desc">
+                Track positions, history, P&amp;L and exposure. Understand how your
+                decisions influence the overall portfolio.
               </p>
-              <div class="feature-tagline">Simple overview instead of complex spreadsheets.</div>
+              <div class="feature-tagline" data-i18n="f4_tag">
+                Visual control instead of manually updated spreadsheets.
+              </div>
             </div>
 
             <div class="feature-card glass">
-              <div class="feature-label">Investments</div>
-              <div class="feature-title">Passive income &amp; funds</div>
-              <p class="feature-desc">
-                Staking, structured strategies, diversified portfolios and access to
-                curated investment ideas.
+              <div class="feature-label" data-i18n="f5_label">Investments</div>
+              <div class="feature-title" data-i18n="f5_title">
+                Tools for long-term strategies
+              </div>
+              <p class="feature-desc" data-i18n="f5_desc">
+                Structured ideas for passive strategies, diversified approaches and
+                long-term positioning in the market.
               </p>
-              <div class="feature-tagline">For users who prefer income without day-trading.</div>
+              <div class="feature-tagline" data-i18n="f5_tag">
+                For users who look beyond day-to-day trading.
+              </div>
             </div>
 
             <div class="feature-card glass">
-              <div class="feature-label">Insights (VIP)</div>
-              <div class="feature-title">Exclusive analytics &amp; automation</div>
-              <p class="feature-desc">
-                High-level market breakdowns, on-chain and orderflow insights, plus
-                automated trading via APIs.
+              <div class="feature-label" data-i18n="f6_label">Support</div>
+              <div class="feature-title" data-i18n="f6_title">
+                Team of specialists 24/7
+              </div>
+              <p class="feature-desc" data-i18n="f6_desc">
+                Telegram support helps navigate the app, explains logic of sections and
+                assists with technical questions around the ecosystem.
               </p>
-              <div class="feature-tagline">VIP-level tools usually accessible only to funds.</div>
+              <div class="feature-tagline" data-i18n="f6_tag">
+                Real people behind the interface, not only FAQ.
+              </div>
             </div>
           </div>
         </div>
@@ -1008,72 +1173,97 @@
       <!-- TIERS -->
       <section id="tiers">
         <div class="container">
-          <div class="section-label pill">Plans</div>
-          <h2 class="section-title">FREE, PRO and VIP — one app, three levels</h2>
-          <p class="section-description">
-            The same ecosystem for different goals. FREE to explore, PRO for full
-            access, VIP for maximum automation and support.
+          <div class="section-label pill" data-i18n="tiers_pill">Plans</div>
+          <h2 class="section-title" data-i18n="tiers_title">
+            FREE, PRO and VIP — one app, three levels
+          </h2>
+          <p class="section-description" data-i18n="tiers_desc">
+            The same ecosystem for different tasks. FREE for exploration, PRO for full
+            access and VIP for maximum depth and automation.
           </p>
 
           <div class="tiers-grid">
             <!-- FREE -->
             <div class="tier-card glass">
               <div class="tier-header">
-                <div class="tier-name free">FREE</div>
-                <div class="tier-badge">Active by default</div>
+                <div class="tier-name free" data-i18n="tier_free_name">FREE</div>
+                <div class="tier-badge" data-i18n="tier_free_badge">Active by default</div>
               </div>
               <ul class="tier-list">
-                <li>Access to basic analytics and market overview.</li>
-                <li>Demo portfolio to test strategies without risk.</li>
-                <li>Part of trading signals with delayed access.</li>
-                <li>Introductory lessons from the crypto course.</li>
+                <li data-i18n="tier_free_li_1">
+                  Basic analytics and limited access to sections.
+                </li>
+                <li data-i18n="tier_free_li_2">
+                  Part of trading signals in read-only format.
+                </li>
+                <li data-i18n="tier_free_li_3">
+                  Introductory lessons from the course.
+                </li>
               </ul>
               <div class="tier-cta">
-                <span class="btn btn-ghost">Current status</span>
+                <span class="btn btn-ghost" data-i18n="tier_free_cta">Current status</span>
               </div>
-              <div class="tier-hint">
-                Ideal starting point to understand how CRYPTO NOVΛ works.
+              <div class="tier-hint" data-i18n="tier_free_hint">
+                Simple way to see how CRYPTO NOVΛ is structured.
               </div>
             </div>
 
             <!-- PRO -->
             <div class="tier-card glass pro">
               <div class="tier-header">
-                <div class="tier-name pro">PRO</div>
-                <div class="tier-badge">Most popular</div>
+                <div class="tier-name pro" data-i18n="tier_pro_name">PRO</div>
+                <div class="tier-badge" data-i18n="tier_pro_badge">Most popular</div>
               </div>
               <ul class="tier-list">
-                <li>Full access to all spot &amp; futures signals.</li>
-                <li>Full access to all educational content and PRO-lessons.</li>
-                <li>Daily analytics, key news and strategies.</li>
-                <li>Access to all trading setups and tactics.</li>
+                <li data-i18n="tier_pro_li_1">
+                  Full access to all spot and futures signal sections.
+                </li>
+                <li data-i18n="tier_pro_li_2">
+                  Full access to all lessons and PRO modules.
+                </li>
+                <li data-i18n="tier_pro_li_3">
+                  Extended analytics and market breakdowns.
+                </li>
+                <li data-i18n="tier_pro_li_4">
+                  Access to structured strategies and setups.
+                </li>
               </ul>
               <div class="tier-cta">
-                <span class="btn btn-primary">Upgrade to PRO</span>
+                <span class="btn btn-primary" data-i18n="tier_pro_cta">Upgrade to PRO</span>
               </div>
-              <div class="tier-hint">
-                For users who are serious about trading and structured growth.
+              <div class="tier-hint" data-i18n="tier_pro_hint">
+                For users who actively work with crypto and want full toolkit.
               </div>
             </div>
 
             <!-- VIP -->
             <div class="tier-card glass vip">
               <div class="tier-header">
-                <div class="tier-name vip">VIP</div>
-                <div class="tier-badge">A-level beyond comparison</div>
+                <div class="tier-name vip" data-i18n="tier_vip_name">VIP</div>
+                <div class="tier-badge" data-i18n="tier_vip_badge">A-level beyond comparison</div>
               </div>
               <ul class="tier-list">
-                <li>Exclusive insights and private market breakdowns.</li>
-                <li>Automated trading: signals executed via API.</li>
-                <li>Individual consultations and portfolio guidance.</li>
-                <li>Early access to high-potential coins and projects.</li>
+                <li data-i18n="tier_vip_li_1">
+                  Exclusive insights and in-depth market breakdowns.
+                </li>
+                <li data-i18n="tier_vip_li_2">
+                  Optional full API autotrading via bot based on signals.
+                </li>
+                <li data-i18n="tier_vip_li_3">
+                  Individual consultations and portfolio support.
+                </li>
+                <li data-i18n="tier_vip_li_4">
+                  Early access to selected strategies and ideas.
+                </li>
               </ul>
               <div class="tier-cta">
-                <span class="btn btn-primary">Get VIP</span>
-                <span class="btn btn-ghost">Get VIP via referrals</span>
+                <span class="btn btn-primary" data-i18n="tier_vip_cta_main">Get VIP</span>
+                <span class="btn btn-ghost" data-i18n="tier_vip_cta_ref">
+                  Get VIP via referrals
+                </span>
               </div>
-              <div class="tier-hint">
-                Built for investors who value time, automation and personal support.
+              <div class="tier-hint" data-i18n="tier_vip_hint">
+                For users who value time, structure and deeper personal support.
               </div>
             </div>
           </div>
@@ -1084,77 +1274,93 @@
       <section id="unique">
         <div class="container">
           <div class="glass" style="padding: 24px 22px;">
-            <div class="section-label pill">Why it is unique</div>
-            <h2 class="section-title">Why CRYPTO NOVΛ is different from exchanges and typical apps</h2>
-            <p class="section-description">
-              Exchanges focus on trading. Courses focus on theory. Signal channels
-              focus on isolated trades. CRYPTO NOVΛ builds an entire ecosystem around
-              the user — from the first deposit to automated strategies.
+            <div class="section-label pill" data-i18n="unique_pill">Positioning</div>
+            <h2 class="section-title" data-i18n="unique_title">
+              How CRYPTO NOVΛ differs from exchanges and signal channels
+            </h2>
+            <p class="section-description" data-i18n="unique_desc">
+              Exchanges focus on execution. Courses focus on theory. Channels often
+              focus only on isolated calls. CRYPTO NOVΛ connects analytics, education,
+              setups and tools into one system where everything is consistent.
             </p>
 
             <div class="list-columns">
               <ul class="bullet-list">
-                <li>One app for analytics, signals, education, portfolio and investments.</li>
-                <li>PRO-level course integrated directly into the trading workflow.</li>
-                <li>Real risk management concepts instead of “all-in” calls.</li>
-                <li>VIP layer with automation and portfolio support, similar to a fund.</li>
-                <li>Clear, minimalistic design built for daily professional use.</li>
+                <li data-i18n="unique_li_1">
+                  One interface for analytics, signals, education, portfolio and long-term strategies.
+                </li>
+                <li data-i18n="unique_li_2">
+                  No guarantees of profit — the app provides information and tools, decisions stay with the user.
+                </li>
+                <li data-i18n="unique_li_3">
+                  Attention to risk management and capital protection at every stage.
+                </li>
+                <li data-i18n="unique_li_4">
+                  Multilanguage support: English, Russian and Ukrainian.
+                </li>
               </ul>
 
               <div class="badge-block glass" style="padding: 18px;">
-                <strong>Result: fewer apps, fewer mistakes, more structure.</strong>
-                <br /><br />
-                CRYPTO NOVΛ is built as a premium tool that can be shown to an
-                investor or used daily by a trader — without the feeling of chaos
-                and “yet another signal channel”.
+                <p data-i18n="unique_aside">
+                  <strong>Result: less chaos, more structure.</strong>
+                  <br /><br />
+                  CRYPTO NOVΛ is designed to be shown both to everyday users and to
+                  investors: a clear product where analytics, course and tools form
+                  one consistent ecosystem.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SOCIAL PROOF -->
+      <!-- SOCIAL / SUPPORT -->
       <section id="social">
         <div class="container">
-          <div class="section-label pill">Social proof</div>
-          <h2 class="section-title">Real use, real decisions</h2>
-          <p class="section-description">
-            The ecosystem is designed to be transparent: signals, education and
-            portfolio logic are aligned. This is how users, partners and investors
-            should perceive CRYPTO NOVΛ.
+          <div class="section-label pill" data-i18n="social_pill">In practice</div>
+          <h2 class="section-title" data-i18n="social_title">
+            How users interact with CRYPTO NOVΛ
+          </h2>
+          <p class="section-description" data-i18n="social_desc">
+            The app is created for everyday use: from checking analytics in the
+            morning to reviewing setups, studying lessons and tracking portfolio.
           </p>
 
           <div class="social-grid">
             <div class="social-card glass">
-              <div class="social-tag">Signals</div>
-              <div class="social-main">
-                Spot and futures entries with clear SL/TP logic and risk per trade.
+              <div class="social-tag" data-i18n="s1_tag">Analytics</div>
+              <div class="social-main" data-i18n="s1_main">
+                Morning market overview and key changes.
               </div>
-              <p>
-                Every signal is linked to an idea: market context, levels and risk.
-                Users can see the full picture, not random calls.
+              <p data-i18n="s1_text">
+                User opens the app, sees total market capitalisation, dominance,
+                leading tokens and sentiment. This becomes a base for any further
+                decisions during the day.
               </p>
             </div>
 
             <div class="social-card glass">
-              <div class="social-tag">Education</div>
-              <div class="social-main">
-                70+ lessons, practice blocks and PRO-modules inside the app.
+              <div class="social-tag" data-i18n="s2_tag">Signals &amp; setups</div>
+              <div class="social-main" data-i18n="s2_main">
+                Structured ideas with levels and risk.
               </div>
-              <p>
-                Lessons close fears and typical mistakes: from security and basics to
-                futures, DeFi and advanced strategies, all updated for 2025.
+              <p data-i18n="s2_text">
+                Signals show entry zones, stops and targets with context. User can
+                trade manually or connect optional autotrading via bot on supported
+                exchanges.
               </p>
             </div>
 
             <div class="social-card glass">
-              <div class="social-tag">Investments</div>
-              <div class="social-main">
-                Tools for passive income and structured portfolios.
+              <div class="social-tag" data-i18n="s3_tag">Support</div>
+              <div class="social-main" data-i18n="s3_main">
+                Help 24/7 via Telegram support.
               </div>
-              <p>
-                For users who don't want to trade daily — staking, structured
-                strategies and VIP-support help capital work with controlled risk.
+              <p data-i18n="s3_text">
+                If a user has questions about sections, settings or logic, the support
+                team answers directly in Telegram — @CRYPTO_NOVA_SUPPORT — and helps
+                understand how to use the app. The team does not provide personal
+                investment advice or manage user funds.
               </p>
             </div>
           </div>
@@ -1164,310 +1370,94 @@
       <!-- DOWNLOAD -->
       <section id="download">
         <div class="container">
-          <div class="download-block glass">
-            <div class="pill" style="margin-bottom: 12px;">Get the app</div>
-            <h2 class="download-title">Start with FREE. Grow to PRO. Reach VIP.</h2>
-            <p class="download-subtitle">
-              Install CRYPTO NOVΛ, explore the ecosystem and then choose the level
-              that matches your goals and risk profile.
+          <div class="glass download-block">
+            <div class="section-label pill" data-i18n="download_pill">Download</div>
+            <h2 class="download-title" data-i18n="download_title">
+              All you need in crypto — in one app
+            </h2>
+            <p class="download-subtitle" data-i18n="download_subtitle">
+              CRYPTO NOVΛ is being prepared for public release on iOS and Android.
+              The same ecosystem, the same structure, the same experience on both
+              platforms.
             </p>
+
             <div class="download-ctas">
-              <a href="#" class="btn btn-primary">Download for iOS</a>
-              <a href="#" class="btn btn-ghost">Download for Android</a>
+              <a href="#" class="btn btn-primary" data-i18n="download_ios">
+                iOS — coming soon
+              </a>
+              <a href="#" class="btn btn-ghost" data-i18n="download_android">
+                Android — coming soon
+              </a>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- PRIVACY POLICY -->
-      <section id="privacy">
-        <div class="container">
-          <div class="glass" style="padding: 24px 22px;">
-            <div class="section-label pill">Legal</div>
-            <h2 class="section-title">Privacy Policy</h2>
-            <p class="section-description">
-              Last updated: 11.12.2025<br>
-              This Privacy Policy explains how we collect, use, store, and protect your information when you use the CRYPTO NOVΛ application (“we”, “our”, “the Service”). We are committed to ensuring transparency and protecting your privacy.
-              By using the Service, you agree to the practices described in this Privacy Policy.
-            </p>
-
-            <h3 class="section-title" style="font-size:18px;margin-top:14px;">1. Data Controller</h3>
-            <p class="section-description" style="margin-bottom:10px;">
-              For purposes of GDPR and similar regulations, the data controller is:
-              <br><br>
-              <strong>CRYPTO NOVΛ</strong><br>
-              Contact for privacy inquiries: <strong>@CRYPTO_NOVA_SUPPORT</strong>
-            </p>
-
-            <h3 class="section-title" style="font-size:18px;margin-top:14px;">2. Data We Collect</h3>
-            <p class="section-description">
-              We may process the following categories of data:
-            </p>
-
-            <p class="section-description" style="margin-top:6px;margin-bottom:4px;"><strong>2.1. Account Data</strong></p>
-            <ul class="bullet-list">
-              <li>Email (if provided)</li>
-              <li>Username or nickname (if provided)</li>
-              <li>Telegram ID (only for support communication)</li>
-            </ul>
-
-            <p class="section-description" style="margin-top:10px;margin-bottom:4px;"><strong>2.2. Technical Metadata</strong></p>
-            <p class="section-description">Automatically collected for security and functionality:</p>
-            <ul class="bullet-list">
-              <li>IP address</li>
-              <li>Device information (model, OS version)</li>
-              <li>Browser/OS language</li>
-              <li>App version</li>
-              <li>Login time and session metadata</li>
-              <li>Cookies, pixels, and similar technologies (if used)</li>
-            </ul>
-
-            <p class="section-description" style="margin-top:10px;margin-bottom:4px;"><strong>2.3. Usage Data</strong></p>
-            <ul class="bullet-list">
-              <li>Screens visited</li>
-              <li>Clicks, navigation, settings</li>
-              <li>In-app interactions</li>
-            </ul>
-
-            <p class="section-description" style="margin-top:10px;margin-bottom:4px;"><strong>2.4. Payment Data</strong></p>
-            <p class="section-description">
-              Processed only by third-party payment providers (Apple, Google, Stripe, Paddle, etc.):
-            </p>
-            <ul class="bullet-list">
-              <li>Transaction ID</li>
-              <li>Payment status</li>
-              <li>Subscription plan</li>
-            </ul>
-            <p class="section-description">
-              We do not store or process credit card numbers, wallet details, or any sensitive payment information.
-            </p>
-
-            <h3 class="section-title" style="font-size:18px;margin-top:14px;">3. Purposes and Legal Basis of Processing</h3>
-            <p class="section-description">
-              We process personal data only when legally justified. Depending on your region (e.g., EU), legal bases may include:
-            </p>
-            <p class="section-description" style="margin-top:6px;margin-bottom:4px;"><strong>3.1. Contract Performance</strong></p>
-            <p class="section-description">
-              To provide the Service, maintain your subscription, deliver analytics, and support functionality.
-            </p>
-            <p class="section-description" style="margin-top:6px;margin-bottom:4px;"><strong>3.2. Legitimate Interest</strong></p>
-            <ul class="bullet-list">
-              <li>Ensuring security and fraud prevention</li>
-              <li>Debugging and improving app stability</li>
-              <li>Enhancing user experience</li>
-            </ul>
-            <p class="section-description" style="margin-top:6px;margin-bottom:4px;"><strong>3.3. Consent</strong></p>
-            <p class="section-description">
-              Required when:
-            </p>
-            <ul class="bullet-list">
-              <li>Using optional cookies</li>
-              <li>Sending marketing messages (if applicable)</li>
-            </ul>
-            <p class="section-description" style="margin-top:6px;margin-bottom:4px;"><strong>3.4. Legal Obligations</strong></p>
-            <p class="section-description">
-              Fulfilling requirements related to taxation, accounting, or regulatory compliance.
-            </p>
-
-            <h3 class="section-title" style="font-size:18px;margin-top:14px;">4. How We Use the Data</h3>
-            <p class="section-description">
-              We use the collected data to:
-            </p>
-            <ul class="bullet-list">
-              <li>Provide and maintain the Service</li>
-              <li>Personalize content</li>
-              <li>Improve performance, stability, and interface</li>
-              <li>Deliver analytics and educational materials</li>
-              <li>Process subscription status</li>
-              <li>Respond to support inquiries</li>
-              <li>Ensure compliance with terms and policies</li>
-            </ul>
-            <p class="section-description">
-              We do NOT use your data to perform financial or trading operations. The app does not execute trades.
-            </p>
-
-            <h3 class="section-title" style="font-size:18px;margin-top:14px;">5. Data Storage and Retention</h3>
-            <p class="section-description">
-              We retain data only as long as necessary to:
-            </p>
-            <ul class="bullet-list">
-              <li>provide the Service,</li>
-              <li>comply with legal obligations,</li>
-              <li>or until you request deletion.</li>
-            </ul>
-            <p class="section-description">
-              If processing is based on consent, you may withdraw it at any time.
-            </p>
-
-            <h3 class="section-title" style="font-size:18px;margin-top:14px;">6. Data Transfers and Third Parties</h3>
-            <p class="section-description">
-              We may share data with trusted service providers strictly for operational purposes:
-            </p>
-            <ul class="bullet-list">
-              <li>Hosting and infrastructure</li>
-              <li>Analytics providers</li>
-              <li>Payment processors</li>
-              <li>Error-logging and debugging tools</li>
-              <li>Support platforms (Telegram)</li>
-            </ul>
-            <p class="section-description">
-              All providers operate under agreements ensuring data confidentiality and security.
-            </p>
-            <p class="section-description">
-              <strong>Cross-border transfers</strong><br>
-              If data is transferred outside your country, we apply appropriate safeguards, such as:
-            </p>
-            <ul class="bullet-list">
-              <li>Standard Contractual Clauses (SCC)</li>
-              <li>Equivalent international protections</li>
-            </ul>
-
-            <h3 class="section-title" style="font-size:18px;margin-top:14px;">7. Your Rights</h3>
-            <p class="section-description">
-              Depending on your jurisdiction, you may have the right to:
-            </p>
-            <ul class="bullet-list">
-              <li>Access your data</li>
-              <li>Correct inaccurate data</li>
-              <li>Request deletion</li>
-              <li>Restrict or object to processing</li>
-              <li>Withdraw consent</li>
-              <li>Request data portability</li>
-            </ul>
-            <p class="section-description">
-              To exercise these rights, contact us at: <strong>@CRYPTO_NOVA_SUPPORT</strong>
-            </p>
-
-            <h3 class="section-title" style="font-size:18px;margin-top:14px;">8. Children’s Privacy</h3>
-            <p class="section-description">
-              The Service is not intended for individuals under 18 years. We do not knowingly collect data from minors. If you believe a minor used the Service, contact us for removal.
-            </p>
-
-            <h3 class="section-title" style="font-size:18px;margin-top:14px;">9. Security Measures</h3>
-            <p class="section-description">
-              We take reasonable administrative, technical, and physical measures to protect your data from unauthorized access, loss, or misuse.
-              However, no system can be fully secure, and we cannot guarantee absolute protection.
-            </p>
-
-            <h3 class="section-title" style="font-size:18px;margin-top:14px;">10. Data Selling</h3>
-            <p class="section-description">
-              We do NOT sell, rent, trade, or monetize personal data.
-              We also do not share data with third parties for their marketing purposes.
-            </p>
-
-            <h3 class="section-title" style="font-size:18px;margin-top:14px;">11. Changes to this Policy</h3>
-            <p class="section-description">
-              We may update this Privacy Policy from time to time.
-              Changes will take effect once published on the official page.
-            </p>
-
-            <h3 class="section-title" style="font-size:18px;margin-top:14px;">12. Contact Information</h3>
-            <p class="section-description">
-              If you have questions about this Privacy Policy or wish to exercise your rights, contact us:
-              <br>
-              Support Telegram: <strong>@CRYPTO_NOVA_SUPPORT</strong>
+            <p class="download-note" data-i18n="download_note">
+              For questions about access, subscriptions or technical details, contact
+              Telegram support:&nbsp;
+              <a
+                href="https://t.me/CRYPTO_NOVA_SUPPORT"
+                target="_blank"
+                rel="noopener"
+                style="color:#cfd3dd;text-decoration:none;"
+              >
+                @CRYPTO_NOVA_SUPPORT
+              </a>
             </p>
           </div>
         </div>
       </section>
 
-      <!-- TERMS OF USE -->
-      <section id="terms">
+      <!-- LEGAL -->
+      <section id="legal" class="legal-section">
         <div class="container">
-          <div class="glass" style="padding: 24px 22px;">
-            <div class="section-label pill">Legal</div>
-            <h2 class="section-title">Terms of Use</h2>
-            <p class="section-description">
-              Last updated: 11.12.2025<br>
-              These Terms of Use (“Terms”) govern your use of the CRYPTO NOVΛ application (“the Service”). By accessing or using the Service, you agree to these Terms.
-            </p>
+          <div class="section-label pill" data-i18n="legal_pill">Legal</div>
+          <h2 class="section-title" data-i18n="legal_title">
+            Privacy, terms and risk disclaimer
+          </h2>
+          <p class="section-description" data-i18n="legal_desc">
+            CRYPTO NOVΛ is an informational and analytical application. It does not
+            execute trades, does not store user funds and does not guarantee any
+            financial results. Please read the documents below carefully.
+          </p>
 
-            <h3 class="section-title" style="font-size:18px;margin-top:14px;">1. Service and Account</h3>
-            <p class="section-description">
-              CRYPTO NOVΛ provides analytical tools, educational materials, alerts, and subscription-based features (FREE/PRO/VIP).
-              To use the Service, you must:
-            </p>
-            <ul class="bullet-list">
-              <li>be at least 18 years old,</li>
-              <li>provide accurate information when required,</li>
-              <li>keep your account and access credentials secure,</li>
-              <li>use the Service only for lawful purposes.</li>
-            </ul>
-            <p class="section-description">
-              The Service does not provide financial, investment, trading, or exchange services. All materials are educational and informational.
-            </p>
+          <!-- Privacy Policy -->
+          <details class="legal-accordion" open>
+            <summary>
+              <span>
+                <span data-i18n="legal_privacy_title">Privacy Policy</span>
+                &nbsp;·&nbsp;
+                <span data-i18n="legal_privacy_updated">Last updated: 11.12.2025</span>
+              </span>
+              <span class="chevron">›</span>
+            </summary>
+            <div class="legal-body">
+              <div
+                class="legal-body-inner active"
+                data-i18n-html="legal_privacy_body"
+              >
+                <!-- Text подставляется скриптом -->
+              </div>
+            </div>
+          </details>
 
-            <h3 class="section-title" style="font-size:18px;margin-top:14px;">2. Payments and Refunds</h3>
-            <p class="section-description">
-              Payments for subscriptions are processed through third-party providers (e.g., Apple, Google, payment processors).
-              Where applicable:
-            </p>
-            <ul class="bullet-list">
-              <li>subscriptions may auto-renew,</li>
-              <li>renewal terms and pricing are displayed at checkout,</li>
-              <li>refunds are handled according to the policies of the provider and applicable law, not by CRYPTO NOVΛ.</li>
-            </ul>
-            <p class="section-description">
-              We do not process or store credit card or wallet data.
-            </p>
-
-            <h3 class="section-title" style="font-size:18px;margin-top:14px;">3. Usage Restrictions</h3>
-            <p class="section-description">
-              You agree NOT to:
-            </p>
-            <ul class="bullet-list">
-              <li>copy, reproduce, resell, or redistribute the Service or its content,</li>
-              <li>bypass access controls or subscription mechanisms,</li>
-              <li>share your credentials with any third party,</li>
-              <li>reverse engineer, decompile, or attempt to extract the source code,</li>
-              <li>use the Service in a way that harms other users or violates laws.</li>
-            </ul>
-            <p class="section-description">
-              Violations may result in suspension or termination of access.
-            </p>
-
-            <h3 class="section-title" style="font-size:18px;margin-top:14px;">4. Intellectual Property</h3>
-            <p class="section-description">
-              All content, features, and materials in the Service are protected by intellectual property rights.
-              You receive a personal, limited, non-exclusive, non-transferable license to use the Service.
-              You may not use the content for commercial purposes without written permission.
-            </p>
-
-            <h3 class="section-title" style="font-size:18px;margin-top:14px;">5. Liability and Disclaimers</h3>
-            <p class="section-description">
-              The Service is provided “as is” without warranties of any kind.
-              CRYPTO NOVΛ does not guarantee accuracy, completeness, or availability of any content.
-              All decisions you make based on analytics, alerts, or educational materials are your personal responsibility.
-            </p>
-            <p class="section-description">
-              We are not liable for:
-            </p>
-            <ul class="bullet-list">
-              <li>financial losses,</li>
-              <li>technical issues,</li>
-              <li>access interruptions,</li>
-              <li>actions taken by third-party services (such as Telegram or payment providers).</li>
-            </ul>
-
-            <h3 class="section-title" style="font-size:18px;margin-top:14px;">6. Dispute Resolution</h3>
-            <p class="section-description">
-              Before taking any formal action, users agree to contact us for pre-trial resolution:
-              <strong>@CRYPTO_NOVA_SUPPORT</strong><br>
-              Applicable jurisdiction and governing law will be specified at the time of publication and according to the user’s region,
-              unless required otherwise by law.
-            </p>
-
-            <h3 class="section-title" style="font-size:18px;margin-top:14px;">7. Modifications</h3>
-            <p class="section-description">
-              We may update these Terms from time to time. Continued use of the Service after updates constitutes acceptance of the revised Terms.
-            </p>
-
-            <h3 class="section-title" style="font-size:18px;margin-top:14px;">8. Contact Information</h3>
-            <p class="section-description">
-              For questions regarding these Terms, contact us:
-              <strong>@CRYPTO_NOVA_SUPPORT</strong>
-            </p>
-          </div>
+          <!-- Terms of Use -->
+          <details class="legal-accordion">
+            <summary>
+              <span>
+                <span data-i18n="legal_terms_title">Terms of Use</span>
+                &nbsp;·&nbsp;
+                <span data-i18n="legal_terms_updated">Last updated: 11.12.2025</span>
+              </span>
+              <span class="chevron">›</span>
+            </summary>
+            <div class="legal-body">
+              <div
+                class="legal-body-inner"
+                data-i18n-html="legal_terms_body"
+              >
+                <!-- Text подставляется скриптом -->
+              </div>
+            </div>
+          </details>
         </div>
       </section>
     </main>
@@ -1477,15 +1467,19 @@
       <div class="container">
         <div class="footer-layout">
           <div>
-            © <span id="year"></span> CRYPTO NOVΛ. All rights reserved.
+            © <span id="year"></span> CRYPTO NOVΛ.
+            <span data-i18n="footer_rights">All rights reserved.</span>
           </div>
           <div class="footer-links">
-            <a href="mailto:cryptonova.app@gmail.com">cryptonova.app@gmail.com</a>
-            <a href="https://t.me/CRYPTO_NOVA_SUPPORT" target="_blank" rel="noreferrer">
-              Telegram support
+            <a href="#hero" data-i18n="footer_back_to_top">Back to top</a>
+            <a
+              href="https://t.me/CRYPTO_NOVA_SUPPORT"
+              target="_blank"
+              rel="noopener"
+              data-i18n="footer_support"
+            >
+              Telegram support: @CRYPTO_NOVA_SUPPORT
             </a>
-            <a href="#privacy">Privacy Policy</a>
-            <a href="#terms">Terms of Use</a>
           </div>
         </div>
       </div>
@@ -1493,7 +1487,805 @@
   </div>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Английский текст легалки вынесен в отдельные константы,
+    // чтобы не было обращения к translations внутри самого объекта.
+
+    const legalPrivacyBodyEn = `
+      <p>This Privacy Policy explains how we collect, use, store, and protect your information when you use the CRYPTO NOVΛ application ("we", "our", "the Service"). We are committed to ensuring transparency and protecting your privacy. By using the Service, you agree to the practices described in this Privacy Policy.</p>
+
+      <h3>1. Data Controller</h3>
+      <p>For purposes of GDPR and similar regulations, the data controller is:<br>
+      <strong>CRYPTO NOVΛ</strong><br>
+      Contact for privacy inquiries: <strong>@CRYPTO_NOVA_SUPPORT</strong></p>
+
+      <h3>2. Data We Collect</h3>
+      <h4>2.1. Account Data</h4>
+      <ul>
+        <li>Email (if provided)</li>
+        <li>Username or nickname (if provided)</li>
+        <li>Telegram ID (only for support communication)</li>
+      </ul>
+
+      <h4>2.2. Technical Metadata</h4>
+      <p>Automatically collected for security and functionality:</p>
+      <ul>
+        <li>IP address</li>
+        <li>Device information (model, OS version)</li>
+        <li>Browser/OS language</li>
+        <li>App version</li>
+        <li>Login time and session metadata</li>
+        <li>Cookies, pixels, and similar technologies (if used)</li>
+      </ul>
+
+      <h4>2.3. Usage Data</h4>
+      <ul>
+        <li>Screens visited</li>
+        <li>Clicks, navigation, settings</li>
+        <li>In-app interactions</li>
+      </ul>
+
+      <h4>2.4. Payment Data</h4>
+      <p>Processed only by third-party payment providers (Apple, Google, Stripe, Paddle, etc.):</p>
+      <ul>
+        <li>Transaction ID</li>
+        <li>Payment status</li>
+        <li>Subscription plan</li>
+      </ul>
+      <p>We do not store or process credit card numbers, wallet details, or any sensitive payment information.</p>
+
+      <h3>3. Purposes and Legal Basis of Processing</h3>
+      <p>We process personal data only when legally justified. Depending on your region (e.g., EU), legal bases may include:</p>
+      <h4>3.1. Contract Performance</h4>
+      <p>To provide the Service, maintain your subscription, deliver analytics, and support functionality.</p>
+      <h4>3.2. Legitimate Interest</h4>
+      <ul>
+        <li>Ensuring security and fraud prevention</li>
+        <li>Debugging and improving app stability</li>
+        <li>Enhancing user experience</li>
+      </ul>
+      <h4>3.3. Consent</h4>
+      <p>Required when:</p>
+      <ul>
+        <li>Using optional cookies</li>
+        <li>Sending marketing messages (if applicable)</li>
+      </ul>
+      <h4>3.4. Legal Obligations</h4>
+      <p>Fulfilling requirements related to taxation, accounting, or regulatory compliance.</p>
+
+      <h3>4. How We Use the Data</h3>
+      <p>We use the collected data to:</p>
+      <ul>
+        <li>Provide and maintain the Service</li>
+        <li>Personalize content</li>
+        <li>Improve performance, stability, and interface</li>
+        <li>Deliver analytics and educational materials</li>
+        <li>Process subscription status</li>
+        <li>Respond to support inquiries</li>
+        <li>Ensure compliance with terms and policies</li>
+      </ul>
+      <p>We do <strong>not</strong> use your data to perform financial or trading operations. The app does not execute trades.</p>
+
+      <h3>5. Data Storage and Retention</h3>
+      <p>We retain data only as long as necessary to:</p>
+      <ul>
+        <li>provide the Service,</li>
+        <li>comply with legal obligations,</li>
+        <li>or until you request deletion.</li>
+      </ul>
+      <p>If processing is based on consent, you may withdraw it at any time.</p>
+
+      <h3>6. Data Transfers and Third Parties</h3>
+      <p>We may share data with trusted service providers strictly for operational purposes:</p>
+      <ul>
+        <li>Hosting and infrastructure</li>
+        <li>Analytics providers</li>
+        <li>Payment processors</li>
+        <li>Error-logging and debugging tools</li>
+        <li>Support platforms (Telegram)</li>
+      </ul>
+      <p><strong>Cross-border transfers.</strong> If data is transferred outside your country, we apply appropriate safeguards, such as Standard Contractual Clauses (SCC) or equivalent international protections.</p>
+
+      <h3>7. Your Rights</h3>
+      <p>Depending on your jurisdiction, you may have the right to:</p>
+      <ul>
+        <li>Access your data</li>
+        <li>Correct inaccurate data</li>
+        <li>Request deletion</li>
+        <li>Restrict or object to processing</li>
+        <li>Withdraw consent</li>
+        <li>Request data portability</li>
+      </ul>
+      <p>To exercise these rights, contact us at Telegram: <strong>@CRYPTO_NOVA_SUPPORT</strong>.</p>
+
+      <h3>8. Children’s Privacy</h3>
+      <p>The Service is not intended for individuals under 18 years. We do not knowingly collect data from minors. If you believe a minor used the Service, contact us for removal.</p>
+
+      <h3>9. Security Measures</h3>
+      <p>We take reasonable administrative, technical, and physical measures to protect your data from unauthorized access, loss, or misuse. However, no system can be fully secure, and we cannot guarantee absolute protection.</p>
+
+      <h3>10. Data Selling</h3>
+      <p>We do <strong>not</strong> sell, rent, trade, or monetize personal data. We also do not share data with third parties for their marketing purposes.</p>
+
+      <h3>11. Changes to this Policy</h3>
+      <p>We may update this Privacy Policy from time to time. Changes will take effect once published on the official page.</p>
+
+      <h3>12. Contact Information</h3>
+      <p>If you have questions about this Privacy Policy or wish to exercise your rights, contact us:<br>
+      Telegram support: <strong>@CRYPTO_NOVA_SUPPORT</strong></p>
+    `;
+
+    const legalTermsBodyEn = `
+      <p>These Terms of Use ("Terms") govern your use of the CRYPTO NOVΛ application ("the Service"). By accessing or using the Service, you agree to these Terms.</p>
+
+      <h3>1. Service and Account</h3>
+      <p>CRYPTO NOVΛ provides analytical tools, educational materials, alerts, and subscription-based features (FREE/PRO/VIP). To use the Service, you must:</p>
+      <ul>
+        <li>be at least 18 years old,</li>
+        <li>provide accurate information when required,</li>
+        <li>keep your account and access credentials secure,</li>
+        <li>use the Service only for lawful purposes.</li>
+      </ul>
+      <p>The Service does not provide financial, investment, trading, or exchange services. All materials are educational and informational.</p>
+
+      <h3>2. Payments and Refunds</h3>
+      <p>Payments for subscriptions are processed through third-party providers (e.g., Apple, Google, payment processors). Where applicable:</p>
+      <ul>
+        <li>subscriptions may auto-renew,</li>
+        <li>renewal terms and pricing are displayed at checkout,</li>
+        <li>refunds are handled according to the policies of the provider and applicable law, not by CRYPTO NOVΛ.</li>
+      </ul>
+      <p>We do not process or store credit card or wallet data.</p>
+
+      <h3>3. Usage Restrictions</h3>
+      <p>You agree NOT to:</p>
+      <ul>
+        <li>copy, reproduce, resell, or redistribute the Service or its content,</li>
+        <li>bypass access controls or subscription mechanisms,</li>
+        <li>share your credentials with any third party,</li>
+        <li>reverse engineer, decompile, or attempt to extract the source code,</li>
+        <li>use the Service in a way that harms other users or violates laws.</li>
+      </ul>
+      <p>Violations may result in suspension or termination of access.</p>
+
+      <h3>4. Intellectual Property</h3>
+      <p>All content, features, and materials in the Service are protected by intellectual property rights. You receive a personal, limited, non-exclusive, non-transferable license to use the Service. You may not use the content for commercial purposes without written permission.</p>
+
+      <h3>5. Liability and Disclaimers</h3>
+      <p>The Service is provided "as is" without warranties of any kind. CRYPTO NOVΛ does not guarantee accuracy, completeness, or availability of any content.</p>
+      <p>All decisions you make based on analytics, alerts, or educational materials are your personal responsibility. We are not liable for:</p>
+      <ul>
+        <li>financial losses,</li>
+        <li>technical issues,</li>
+        <li>access interruptions,</li>
+        <li>actions taken by third-party services (such as Telegram or payment providers).</li>
+      </ul>
+
+      <h3>6. Dispute Resolution</h3>
+      <p>Before taking any formal action, users agree to contact us for pre-trial resolution: <strong>@CRYPTO_NOVA_SUPPORT</strong> in Telegram.</p>
+      <p>Applicable jurisdiction and governing law may depend on the user’s region and will be specified in additional documents or required by local law.</p>
+
+      <h3>7. Modifications</h3>
+      <p>We may update these Terms from time to time. Continued use of the Service after updates constitutes acceptance of the revised Terms.</p>
+
+      <h3>8. Contact Information</h3>
+      <p>For questions regarding these Terms, contact us in Telegram: <strong>@CRYPTO_NOVA_SUPPORT</strong>.</p>
+    `;
+
+    // ================ TRANSLATIONS ================
+
+    const translations = {
+      en: {
+        nav_overview: "Overview",
+        nav_about: "Why CRYPTO NOVΛ",
+        nav_features: "App sections",
+        nav_plans: "Plans",
+        nav_download: "Download",
+        nav_legal: "Legal",
+        nav_cta: "Get the app",
+
+        hero_pill: "Premium crypto ecosystem",
+        hero_title_1: "All you need in crypto",
+        hero_title_2: "— in one app.",
+        hero_subtitle:
+          "CRYPTO NOVΛ unites deep daily market analytics, structured trading signals, a 70+ lesson course, portfolio tools and optional API autotrading in a single app.",
+        hero_btn_ios: "Download for iOS",
+        hero_btn_android: "Download for Android",
+        hero_note:
+          "From basic education to PRO and VIP tools — one ecosystem instead of many separate services.",
+        hero_scroll_hint: "Swipe horizontally to view real app screens.",
+
+        about_pill: "About CRYPTO NOVΛ",
+        about_title: "One ecosystem instead of many separate tools",
+        about_desc:
+          "Traders and investors usually jump between exchanges, signal channels, PDF-courses and spreadsheets. CRYPTO NOVΛ combines all key components into one structured, premium-level application.",
+        about_li_1: "Deep daily market analytics and dashboards.",
+        about_li_2: "Ready-made spot and futures setups with clear levels and risk.",
+        about_li_3: "Optional API autotrading via bot based on signals.",
+        about_li_4:
+          "Structured 70+ lesson course from basics to advanced strategies.",
+        about_li_5: "Portfolio analytics, statistics and risk tracking.",
+        about_li_6: "Support team ready to help 24/7 via Telegram.",
+        about_aside_1:
+          "<strong>Designed for real usage and real decisions.</strong><br><br>CRYPTO NOVΛ is not an exchange and not a financial advisor. It is a professional environment where analytics, education and signals are aligned in one place, helping you make informed choices in the crypto market.",
+
+        features_pill: "App sections",
+        features_title: "What is inside CRYPTO NOVΛ",
+        features_desc:
+          "Every section of the app has one clear task: to give you structured information, not promises. Analytics, setups, lessons and tools work together inside one ecosystem.",
+
+        f1_label: "Home",
+        f1_title: "Deep daily market analytics",
+        f1_desc:
+          "Capitalisation, volumes, dominance, key tokens and sentiment indicators — updated and visualised in one screen.",
+        f1_tag: "See the market context before looking at any single coin.",
+
+        f2_label: "Signals",
+        f2_title: "Ready-made spot & futures setups",
+        f2_desc:
+          "Structured ideas with entry zones, stop levels and targets. Signals are informational and can be used manually or via optional API autotrading.",
+        f2_tag:
+          "No guarantees or promises — only transparent setups and levels.",
+
+        f3_label: "Education",
+        f3_title: "70+ lessons inside the app",
+        f3_desc:
+          "From fundamentals and security to futures, risk management, DeFi and advanced strategies — structured in modules with practice tasks.",
+        f3_tag: "Learn and apply directly in the same environment.",
+
+        f4_label: "Portfolio",
+        f4_title: "Portfolio and risk overview",
+        f4_desc:
+          "Track positions, history, P&L and exposure. Understand how your decisions influence the overall portfolio.",
+        f4_tag: "Visual control instead of manually updated spreadsheets.",
+
+        f5_label: "Investments",
+        f5_title: "Tools for long-term strategies",
+        f5_desc:
+          "Structured ideas for passive strategies, diversified approaches and long-term positioning in the market.",
+        f5_tag: "For users who look beyond day-to-day trading.",
+
+        f6_label: "Support",
+        f6_title: "Team of specialists 24/7",
+        f6_desc:
+          "Telegram support helps navigate the app, explains logic of sections and assists with technical questions around the ecosystem.",
+        f6_tag: "Real people behind the interface, not only FAQ.",
+
+        tiers_pill: "Plans",
+        tiers_title: "FREE, PRO and VIP — one app, three levels",
+        tiers_desc:
+          "The same ecosystem for different tasks. FREE for exploration, PRO for full access and VIP for maximum depth and automation.",
+
+        tier_free_name: "FREE",
+        tier_free_badge: "Active by default",
+        tier_free_li_1: "Basic analytics and limited access to sections.",
+        tier_free_li_2: "Part of trading signals in read-only format.",
+        tier_free_li_3: "Introductory lessons from the course.",
+        tier_free_cta: "Current status",
+        tier_free_hint: "Simple way to see how CRYPTO NOVΛ is structured.",
+
+        tier_pro_name: "PRO",
+        tier_pro_badge: "Most popular",
+        tier_pro_li_1: "Full access to all spot and futures signal sections.",
+        tier_pro_li_2: "Full access to all lessons and PRO modules.",
+        tier_pro_li_3: "Extended analytics and market breakdowns.",
+        tier_pro_li_4: "Access to structured strategies and setups.",
+        tier_pro_cta: "Upgrade to PRO",
+        tier_pro_hint:
+          "For users who actively work with crypto and want full toolkit.",
+
+        tier_vip_name: "VIP",
+        tier_vip_badge: "A-level beyond comparison",
+        tier_vip_li_1: "Exclusive insights and in-depth market breakdowns.",
+        tier_vip_li_2:
+          "Optional full API autotrading via bot based on signals.",
+        tier_vip_li_3: "Individual consultations and portfolio support.",
+        tier_vip_li_4:
+          "Early access to selected strategies and ideas.",
+        tier_vip_cta_main: "Get VIP",
+        tier_vip_cta_ref: "Get VIP via referrals",
+        tier_vip_hint:
+          "For users who value time, structure and deeper personal support.",
+
+        unique_pill: "Positioning",
+        unique_title:
+          "How CRYPTO NOVΛ differs from exchanges and signal channels",
+        unique_desc:
+          "Exchanges focus on execution. Courses focus on theory. Channels often focus only on isolated calls. CRYPTO NOVΛ connects analytics, education, setups and tools into one system where everything is consistent.",
+        unique_li_1:
+          "One interface for analytics, signals, education, portfolio and long-term strategies.",
+        unique_li_2:
+          "No guarantees of profit — the app provides information and tools, decisions stay with the user.",
+        unique_li_3:
+          "Attention to risk management and capital protection at every stage.",
+        unique_li_4:
+          "Multilanguage support: English, Russian and Ukrainian.",
+        unique_aside:
+          "<strong>Result: less chaos, more structure.</strong><br><br>CRYPTO NOVΛ is designed to be shown both to everyday users and to investors: a clear product where analytics, course and tools form one consistent ecosystem.",
+
+        social_pill: "In practice",
+        social_title: "How users interact with CRYPTO NOVΛ",
+        social_desc:
+          "The app is created for everyday use: from checking analytics in the morning to reviewing setups, studying lessons and tracking portfolio.",
+
+        s1_tag: "Analytics",
+        s1_main: "Morning market overview and key changes.",
+        s1_text:
+          "User opens the app, sees total market capitalisation, dominance, leading tokens and sentiment. This becomes a base for any further decisions during the day.",
+
+        s2_tag: "Signals & setups",
+        s2_main: "Structured ideas with levels and risk.",
+        s2_text:
+          "Signals show entry zones, stops and targets with context. User can trade manually or connect optional autotrading via bot on supported exchanges.",
+
+        s3_tag: "Support",
+        s3_main: "Help 24/7 via Telegram support.",
+        s3_text:
+          "If a user has questions about sections, settings or logic, the support team answers directly in Telegram — @CRYPTO_NOVA_SUPPORT — and helps understand how to use the app. The team does not provide personal investment advice or manage user funds.",
+
+        download_pill: "Download",
+        download_title: "All you need in crypto — in one app",
+        download_subtitle:
+          "CRYPTO NOVΛ is being prepared for public release on iOS and Android. The same ecosystem, the same structure, the same experience on both platforms.",
+        download_ios: "iOS — coming soon",
+        download_android: "Android — coming soon",
+        download_note:
+          "For questions about access, subscriptions or technical details, contact Telegram support: @CRYPTO_NOVA_SUPPORT",
+
+        legal_pill: "Legal",
+        legal_title: "Privacy, terms and risk disclaimer",
+        legal_desc:
+          "CRYPTO NOVΛ is an informational and analytical application. It does not execute trades, does not store user funds and does not guarantee any financial results. Please read the documents below carefully.",
+        legal_privacy_title: "Privacy Policy",
+        legal_privacy_updated: "Last updated: 11.12.2025",
+        legal_terms_title: "Terms of Use",
+        legal_terms_updated: "Last updated: 11.12.2025",
+
+        footer_rights: "All rights reserved.",
+        footer_back_to_top: "Back to top",
+        footer_support: "Telegram support: @CRYPTO_NOVA_SUPPORT",
+
+        legal_privacy_body: legalPrivacyBodyEn,
+        legal_terms_body: legalTermsBodyEn,
+      },
+
+      // -------- Russian --------
+      ru: {
+        nav_overview: "Обзор",
+        nav_about: "Почему CRYPTO NOVΛ",
+        nav_features: "Разделы приложения",
+        nav_plans: "Статусы",
+        nav_download: "Скачать",
+        nav_legal: "Юридическая информация",
+        nav_cta: "Получить приложение",
+
+        hero_pill: "Премиальная крипто-экосистема",
+        hero_title_1: "Всё, что нужно в крипте",
+        hero_title_2: "— в одном приложении.",
+        hero_subtitle:
+          "CRYPTO NOVΛ объединяет ежедневную аналитику рынка, структурированные торговые сигналы, курс из 70+ уроков, инструменты портфеля и опциональный API-автотрейдинг в одном приложении.",
+        hero_btn_ios: "Скачать для iOS",
+        hero_btn_android: "Скачать для Android",
+        hero_note:
+          "От базового обучения до PRO и VIP-инструментов — одна экосистема вместо десятка разрозненных сервисов.",
+        hero_scroll_hint: "Листайте по горизонтали, чтобы увидеть реальные экраны приложения.",
+
+        about_pill: "О CRYPTO NOVΛ",
+        about_title: "Одна экосистема вместо множества сервисов",
+        about_desc:
+          "Трейдеры и инвесторы обычно прыгают между биржами, каналами с сигналами, PDF-курсами и таблицами. CRYPTO NOVΛ собирает все ключевые элементы в одном структурированном приложении премиум-уровня.",
+        about_li_1: "Глубокая ежедневная аналитика рынка и дашборды.",
+        about_li_2:
+          "Готовые спотовые и фьючерсные сетапы с понятными уровнями и риском.",
+        about_li_3:
+          "Опциональный API-автотрейдинг через бота на основе сигналов.",
+        about_li_4:
+          "Структурированный курс из 70+ уроков — от базы до продвинутых стратегий.",
+        about_li_5: "Аналитика портфеля, статистика и контроль риска.",
+        about_li_6:
+          "Команда поддержки, готовая помогать 24/7 через Telegram.",
+        about_aside_1:
+          "<strong>Создано для реального ежедневного использования.</strong><br><br>CRYPTO NOVΛ — не биржа и не финансовый консультант. Это профессиональная среда, где аналитика, обучение и сигналы находятся в одном месте и помогают принимать осознанные решения на рынке криптовалют.",
+
+        features_pill: "Разделы приложения",
+        features_title: "Что внутри CRYPTO NOVΛ",
+        features_desc:
+          "У каждого раздела приложения одна понятная задача: дать структурированную информацию, а не обещания. Аналитика, сетапы, обучение и инструменты работают как единая система.",
+
+        f1_label: "Главная",
+        f1_title: "Ежедневная аналитика рынка",
+        f1_desc:
+          "Капитализация, объёмы, доминация, ключевые токены и индексы настроения — обновляются и визуализируются на одном экране.",
+        f1_tag: "Сначала контекст рынка, потом — отдельные монеты.",
+
+        f2_label: "Сигналы",
+        f2_title: "Готовые спотовые и фьючерсные сетапы",
+        f2_desc:
+          "Структурированные идеи с зонами входа, стоп-уровнями и целями. Сигналы носят информационный характер и могут использоваться вручную или через опциональный API-автотрейдинг.",
+        f2_tag:
+          "Без гарантий и обещаний — только прозрачные сетапы и уровни.",
+
+        f3_label: "Обучение",
+        f3_title: "Более 70 уроков внутри приложения",
+        f3_desc:
+          "От основ и безопасности до фьючерсов, риск-менеджмента, DeFi и продвинутых стратегий — всё структурировано по модулям с практикой.",
+        f3_tag: "Учитесь и сразу применяйте в той же среде.",
+
+        f4_label: "Портфель",
+        f4_title: "Контроль портфеля и риска",
+        f4_desc:
+          "Отслеживайте позиции, историю, P&L и нагрузку. Понимайте, как каждое решение влияет на общий портфель.",
+        f4_tag: "Визуальный контроль вместо ручных таблиц.",
+
+        f5_label: "Инвестиции",
+        f5_title: "Инструменты для долгосрочных стратегий",
+        f5_desc:
+          "Структурированные идеи для пассивных стратегий, диверсификации и долгосрочного позиционирования на рынке.",
+        f5_tag: "Для тех, кто смотрит дальше краткосрока.",
+
+        f6_label: "Поддержка",
+        f6_title: "Команда специалистов 24/7",
+        f6_desc:
+          "Поддержка в Telegram помогает разобраться в разделах, логике приложения и технических вопросах вокруг экосистемы.",
+        f6_tag: "За интерфейсом стоят реальные люди, а не только FAQ.",
+
+        tiers_pill: "Статусы",
+        tiers_title: "FREE, PRO и VIP — одно приложение, три уровня",
+        tiers_desc:
+          "Одна и та же экосистема под разные задачи. FREE — чтобы познакомиться, PRO — для полного доступа, VIP — для максимальной глубины и автоматизации.",
+
+        tier_free_name: "FREE",
+        tier_free_badge: "Активен по умолчанию",
+        tier_free_li_1: "Базовая аналитика и ограниченный доступ к разделам.",
+        tier_free_li_2: "Часть торговых сигналов в режиме чтения.",
+        tier_free_li_3: "Вводные уроки из курса.",
+        tier_free_cta: "Текущий статус",
+        tier_free_hint:
+          "Простой способ понять структуру CRYPTO NOVΛ.",
+
+        tier_pro_name: "PRO",
+        tier_pro_badge: "Самый популярный",
+        tier_pro_li_1:
+          "Полный доступ ко всем спотовым и фьючерсным сигналам.",
+        tier_pro_li_2:
+          "Полный доступ ко всем урокам и PRO-модулям.",
+        tier_pro_li_3:
+          "Расширенная аналитика и углублённые обзоры рынка.",
+        tier_pro_li_4:
+          "Доступ ко всем стратегиям и торговым сетапам.",
+        tier_pro_cta: "Перейти на PRO",
+        tier_pro_hint:
+          "Для тех, кто активно работает с криптой и хочет полный набор инструментов.",
+
+        tier_vip_name: "VIP",
+        tier_vip_badge: "Уровень вне конкуренции",
+        tier_vip_li_1:
+          "Эксклюзивные инсайты и глубокие разборы рынка.",
+        tier_vip_li_2:
+          "Опциональный полный API-автотрейдинг через бота на основе сигналов.",
+        tier_vip_li_3:
+          "Индивидуальные консультации и сопровождение портфеля.",
+        tier_vip_li_4:
+          "Ранний доступ к отобранным стратегиям и идеям.",
+        tier_vip_cta_main: "Получить VIP",
+        tier_vip_cta_ref: "VIP через реферальную систему",
+        tier_vip_hint:
+          "Для пользователей, которые ценят время, структуру и персональное сопровождение.",
+
+        unique_pill: "Позиционирование",
+        unique_title:
+          "Чем CRYPTO NOVΛ отличается от бирж и каналов с сигналами",
+        unique_desc:
+          "Биржи фокусируются на исполнении сделок. Курсы — на теории. Каналы — на отдельных идеях. CRYPTO NOVΛ соединяет аналитику, обучение, сетапы и инструменты в одну согласованную систему.",
+        unique_li_1:
+          "Один интерфейс для аналитики, сигналов, обучения, портфеля и долгосрочных стратегий.",
+        unique_li_2:
+          "Без обещаний прибыли — приложение даёт информацию и инструменты, решения принимает пользователь.",
+        unique_li_3:
+          "Фокус на риск-менеджменте и защите капитала на каждом шаге.",
+        unique_li_4:
+          "Мультиязычность: английский, русский и украинский.",
+        unique_aside:
+          "<strong>Меньше хаоса, больше структуры.</strong><br><br>CRYPTO NOVΛ можно одинаково уверенно показывать и конечным пользователям, и инвесторам: понятный продукт, где аналитика, курс и инструменты образуют единую экосистему.",
+
+        social_pill: "Как это работает на практике",
+        social_title: "Как пользователи взаимодействуют с CRYPTO NOVΛ",
+        social_desc:
+          "Приложение создавалось для ежедневного использования: от утренней проверки рынка до разбора сетапов, обучения и контроля портфеля.",
+
+        s1_tag: "Аналитика",
+        s1_main: "Утренний обзор рынка и ключевые изменения.",
+        s1_text:
+          "Пользователь открывает приложение, видит общую капитализацию рынка, доминацию, ведущие токены и индексы настроения. Это база для любых дальнейших решений в течение дня.",
+
+        s2_tag: "Сигналы и сетапы",
+        s2_main: "Структурированные идеи с уровнями и риском.",
+        s2_text:
+          "Сигналы показывают зоны входа, стопы и цели с контекстом. Пользователь может торговать вручную или подключить опциональный автотрейдинг через бота на поддерживаемых биржах.",
+
+        s3_tag: "Поддержка",
+        s3_main: "Помощь 24/7 через Telegram-поддержку.",
+        s3_text:
+          "Если у пользователя возникают вопросы по разделам, настройкам или логике, команда отвечает напрямую в Telegram — @CRYPTO_NOVA_SUPPORT — и помогает разобраться, как использовать приложение. Команда не даёт индивидуальных инвестиционных рекомендаций и не управляет средствами пользователей.",
+
+        download_pill: "Скачать",
+        download_title: "Всё, что нужно в крипте — в одном приложении",
+        download_subtitle:
+          "CRYPTO NOVΛ готовится к публичному релизу на iOS и Android. Одинаковая экосистема, структура и опыт использования на обеих платформах.",
+        download_ios: "iOS — скоро доступно",
+        download_android: "Android — скоро доступно",
+        download_note:
+          "По вопросам доступа, подписок и технических деталей обращайтесь в поддержку Telegram: @CRYPTO_NOVA_SUPPORT",
+
+        legal_pill: "Юридическая информация",
+        legal_title: "Конфиденциальность, условия и отказ от ответственности",
+        legal_desc:
+          "CRYPTO NOVΛ — информационно-аналитическое приложение. Оно не совершает сделки, не хранит средства пользователей и не гарантирует финансовый результат. Внимательно ознакомьтесь с документами ниже.",
+        legal_privacy_title: "Политика конфиденциальности",
+        legal_privacy_updated: "Обновлено: 11.12.2025",
+        legal_terms_title: "Условия использования",
+        legal_terms_updated: "Обновлено: 11.12.2025",
+
+        footer_rights: "Все права защищены.",
+        footer_back_to_top: "Наверх",
+        footer_support: "Поддержка в Telegram: @CRYPTO_NOVA_SUPPORT",
+
+        legal_privacy_body:
+          "<p><em>Ниже приведена официальная версия Политики конфиденциальности на английском языке.</em></p>" +
+          legalPrivacyBodyEn,
+        legal_terms_body:
+          "<p><em>Ниже приведена официальная версия Условий использования на английском языке.</em></p>" +
+          legalTermsBodyEn
+      },
+
+      // -------- Ukrainian --------
+      ua: {
+        nav_overview: "Огляд",
+        nav_about: "Чому CRYPTO NOVΛ",
+        nav_features: "Розділи застосунку",
+        nav_plans: "Статуси",
+        nav_download: "Завантажити",
+        nav_legal: "Юридична інформація",
+        nav_cta: "Отримати застосунок",
+
+        hero_pill: "Преміальна крипто-екосистема",
+        hero_title_1: "Усе, що потрібно в крипті",
+        hero_title_2: "— в одному застосунку.",
+        hero_subtitle:
+          "CRYPTO NOVΛ об’єднує щоденну аналітику ринку, структуровані торгові сигнали, курс з 70+ уроків, інструменти портфеля та опціональний API-автотрейдинг в одному застосунку.",
+        hero_btn_ios: "Завантажити для iOS",
+        hero_btn_android: "Завантажити для Android",
+        hero_note:
+          "Від базового навчання до PRO та VIP-інструментів — одна екосистема замість десятка розрізнених сервісів.",
+        hero_scroll_hint:
+          "Гортайте по горизонталі, щоб побачити реальні екрани застосунку.",
+
+        about_pill: "Про CRYPTO NOVΛ",
+        about_title: "Одна екосистема замість багатьох сервісів",
+        about_desc:
+          "Трейдери та інвестори зазвичай стрибають між біржами, каналами з сигналами, PDF-курсами та таблицями. CRYPTO NOVΛ збирає всі ключові елементи в одному структурованому застосунку преміум-рівня.",
+        about_li_1: "Глибока щоденна аналітика ринку та дашборди.",
+        about_li_2:
+          "Готові спотові та ф’ючерсні сетапи з зрозумілими рівнями та ризиком.",
+        about_li_3:
+          "Опціональний API-автотрейдинг через бота на основі сигналів.",
+        about_li_4:
+          "Структурований курс з 70+ уроків — від бази до просунутих стратегій.",
+        about_li_5: "Аналітика портфеля, статистика та контроль ризику.",
+        about_li_6:
+          "Команда підтримки, що готова допомагати 24/7 через Telegram.",
+        about_aside_1:
+          "<strong>Створено для реального щоденного використання.</strong><br><br>CRYPTO NOVΛ — не біржа і не фінансовий радник. Це професійне середовище, де аналітика, навчання та сигнали знаходяться в одному місці й допомагають приймати зважені рішення на крипторинку.",
+
+        features_pill: "Розділи застосунку",
+        features_title: "Що всередині CRYPTO NOVΛ",
+        features_desc:
+          "Кожен розділ застосунку має одну чітку задачу: дати структуровану інформацію, а не обіцянки. Аналітика, сетапи, навчання та інструменти працюють як єдина система.",
+
+        f1_label: "Головна",
+        f1_title: "Щоденна аналітика ринку",
+        f1_desc:
+          "Капіталізація, обсяги, домінація, ключові токени й індекси настроїв — оновлюються та візуалізуються на одному екрані.",
+        f1_tag: "Спочатку контекст ринку, потім — окремі монети.",
+
+        f2_label: "Сигнали",
+        f2_title: "Готові спотові та ф’ючерсні сетапи",
+        f2_desc:
+          "Структуровані ідеї із зонами входу, стоп-рівнями та цілями. Сигнали мають інформаційний характер і можуть використовуватися вручну або через опціональний API-автотрейдинг.",
+        f2_tag:
+          "Без гарантій і обіцянок — лише прозорі сетапи та рівні.",
+
+        f3_label: "Навчання",
+        f3_title: "Понад 70 уроків у застосунку",
+        f3_desc:
+          "Від основ і безпеки до ф’ючерсів, ризик-менеджменту, DeFi та просунутих стратегій — усе структуровано по модулях із практикою.",
+        f3_tag: "Навчайтеся й одразу застосовуйте в тій самій екосистемі.",
+
+        f4_label: "Портфель",
+        f4_title: "Контроль портфеля та ризику",
+        f4_desc:
+          "Відстежуйте позиції, історію, P&L та навантаження. Розумійте, як кожне рішення впливає на загальний портфель.",
+        f4_tag: "Візуальний контроль замість ручних таблиць.",
+
+        f5_label: "Інвестиції",
+        f5_title: "Інструменти для довгострокових стратегій",
+        f5_desc:
+          "Структуровані ідеї для пасивних стратегій, диверсифікації та довгострокового позиціонування на ринку.",
+        f5_tag: "Для тих, хто дивиться далі короткострокових угод.",
+
+        f6_label: "Підтримка",
+        f6_title: "Команда спеціалістів 24/7",
+        f6_desc:
+          "Підтримка в Telegram допомагає розібратися в розділах, логіці застосунку та технічних питаннях навколо екосистеми.",
+        f6_tag: "За інтерфейсом стоять реальні люди, а не лише FAQ.",
+
+        tiers_pill: "Статуси",
+        tiers_title: "FREE, PRO та VIP — один застосунок, три рівні",
+        tiers_desc:
+          "Одна й та сама екосистема для різних задач. FREE — щоб познайомитися, PRO — для повного доступу, VIP — для максимальної глибини та автоматизації.",
+
+        tier_free_name: "FREE",
+        tier_free_badge: "Активний за замовчуванням",
+        tier_free_li_1:
+          "Базова аналітика й обмежений доступ до розділів.",
+        tier_free_li_2: "Частина торгових сигналів у режимі читання.",
+        tier_free_li_3: "Вступні уроки з курсу.",
+        tier_free_cta: "Поточний статус",
+        tier_free_hint:
+          "Простий спосіб побачити структуру CRYPTO NOVΛ.",
+
+        tier_pro_name: "PRO",
+        tier_pro_badge: "Найпопулярніший",
+        tier_pro_li_1:
+          "Повний доступ до всіх спотових та ф’ючерсних сигналів.",
+        tier_pro_li_2:
+          "Повний доступ до всіх уроків і PRO-модулів.",
+        tier_pro_li_3:
+          "Розширена аналітика та поглиблені огляди ринку.",
+        tier_pro_li_4:
+          "Доступ до всіх стратегій і торгових сетапів.",
+        tier_pro_cta: "Перейти на PRO",
+        tier_pro_hint:
+          "Для користувачів, які активно працюють із криптою й хочуть повний набір інструментів.",
+
+        tier_vip_name: "VIP",
+        tier_vip_badge: "Рівень поза порівнянням",
+        tier_vip_li_1:
+          "Ексклюзивні інсайти та глибокі розбори ринку.",
+        tier_vip_li_2:
+          "Опціональний повний API-автотрейдинг через бота на основі сигналів.",
+        tier_vip_li_3:
+          "Індивідуальні консультації та супровід портфеля.",
+        tier_vip_li_4:
+          "Ранній доступ до відібраних стратегій та ідей.",
+        tier_vip_cta_main: "Отримати VIP",
+        tier_vip_cta_ref: "VIP через реферальну систему",
+        tier_vip_hint:
+          "Для користувачів, які цінують час, структуру та персональний супровід.",
+
+        unique_pill: "Позиціонування",
+        unique_title:
+          "Чим CRYPTO NOVΛ відрізняється від бірж і каналів із сигналами",
+        unique_desc:
+          "Біржі зосереджені на виконанні угод. Курси — на теорії. Канали — на окремих ідеях. CRYPTO NOVΛ поєднує аналітику, навчання, сетапи та інструменти в одну узгоджену систему.",
+        unique_li_1:
+          "Один інтерфейс для аналітики, сигналів, навчання, портфеля та довгострокових стратегій.",
+        unique_li_2:
+          "Без обіцянок прибутку — застосунок надає інформацію та інструменти, рішення приймає користувач.",
+        unique_li_3:
+          "Фокус на ризик-менеджменті та захисті капіталу на кожному етапі.",
+        unique_li_4:
+          "Мультимовність: англійська, російська та українська.",
+        unique_aside:
+          "<strong>Менше хаосу, більше структури.</strong><br><br>CRYPTO NOVΛ однаково впевнено можна показувати і користувачам, і інвесторам: зрозумілий продукт, де аналітика, курс та інструменти утворюють єдину екосистему.",
+
+        social_pill: "Як це працює на практиці",
+        social_title: "Як користувачі взаємодіють із CRYPTO NOVΛ",
+        social_desc:
+          "Застосунок створювався для щоденного використання: від ранкового огляду ринку до аналізу сетапів, навчання та контролю портфеля.",
+
+        s1_tag: "Аналітика",
+        s1_main: "Ранковий огляд ринку та ключові зміни.",
+        s1_text:
+          "Користувач відкриває застосунок, бачить загальну капіталізацію ринку, домінацію, провідні токени й індекси настроїв. Це база для будь-яких подальших рішень протягом дня.",
+
+        s2_tag: "Сигнали та сетапи",
+        s2_main: "Структуровані ідеї з рівнями та ризиком.",
+        s2_text:
+          "Сигнали показують зони входу, стопи й цілі з контекстом. Користувач може торгувати вручну або підключити опціональний автотрейдинг через бота на підтримуваних біржах.",
+
+        s3_tag: "Підтримка",
+        s3_main: "Допомога 24/7 через Telegram-підтримку.",
+        s3_text:
+          "Якщо у користувача виникають питання щодо розділів, налаштувань чи логіки, команда відповідає напряму в Telegram — @CRYPTO_NOVA_SUPPORT — та допомагає розібратися, як користуватися застосунком. Команда не надає індивідуальних інвестиційних рекомендацій і не керує коштами користувачів.",
+
+        download_pill: "Завантажити",
+        download_title: "Усе, що потрібно в крипті — в одному застосунку",
+        download_subtitle:
+          "CRYPTO NOVΛ готується до публічного релізу на iOS та Android. Та сама екосистема, структура й досвід використання на обох платформах.",
+        download_ios: "iOS — незабаром",
+        download_android: "Android — незабаром",
+        download_note:
+          "З питань доступу, підписок і технічних деталей звертайтеся в підтримку Telegram: @CRYPTO_NOVA_SUPPORT",
+
+        legal_pill: "Юридична інформація",
+        legal_title: "Конфіденційність, умови та відмова від відповідальності",
+        legal_desc:
+          "CRYPTO NOVΛ — інформаційно-аналітичний застосунок. Він не здійснює угод, не зберігає кошти користувачів і не гарантує фінансовий результат. Уважно ознайомтеся з документами нижче.",
+        legal_privacy_title: "Політика конфіденційності",
+        legal_privacy_updated: "Оновлено: 11.12.2025",
+        legal_terms_title: "Умови використання",
+        legal_terms_updated: "Оновлено: 11.12.2025",
+
+        footer_rights: "Усі права захищені.",
+        footer_back_to_top: "Вгору",
+        footer_support: "Підтримка в Telegram: @CRYPTO_NOVA_SUPPORT",
+
+        legal_privacy_body:
+          "<p><em>Нижче наведена офіційна версія Політики конфіденційності англійською мовою.</em></p>" +
+          legalPrivacyBodyEn,
+        legal_terms_body:
+          "<p><em>Нижче наведена офіційна версія Умов використання англійською мовою.</em></p>" +
+          legalTermsBodyEn
+      }
+    };
+
+    // ================ LANGUAGE & UI LOGIC ================
+
+    (function () {
+      const langSwitch = document.getElementById("langSwitch");
+
+      function applyLang(lang) {
+        const dict = translations[lang] || translations.en;
+
+        document.documentElement.lang = lang === "ua" ? "uk" : lang;
+        document.documentElement.setAttribute("data-lang", lang);
+
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.dataset.i18n;
+          if (dict[key]) el.textContent = dict[key];
+        });
+
+        document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+          const key = el.dataset.i18nHtml;
+          if (dict[key]) el.innerHTML = dict[key];
+        });
+
+        document.querySelectorAll(".lang-btn").forEach((btn) => {
+          btn.classList.toggle("active", btn.dataset.lang === lang);
+        });
+
+        localStorage.setItem("cn_lang", lang);
+      }
+
+      langSwitch.addEventListener("click", (e) => {
+        const btn = e.target.closest(".lang-btn");
+        if (!btn) return;
+        applyLang(btn.dataset.lang);
+      });
+
+      // Аккордеоны: просто добавляем/убираем класс для плавности
+      document.querySelectorAll(".legal-accordion").forEach((details) => {
+        details.addEventListener("toggle", () => {
+          const inner = details.querySelector(".legal-body-inner");
+          if (!inner) return;
+          if (details.open) inner.classList.add("active");
+          else inner.classList.remove("active");
+        });
+      });
+
+      // Показ тела при открытом аккордеоне
+      const style = document.createElement("style");
+      style.textContent =
+        ".legal-accordion[open] .legal-body-inner{display:block;}";
+      document.head.appendChild(style);
+
+      // Год в футере
+      const yearEl = document.getElementById("year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      const saved = localStorage.getItem("cn_lang") || "en";
+      applyLang(saved);
+    })();
   </script>
 </body>
 </html>
